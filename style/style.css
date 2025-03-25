@@ -1,0 +1,276 @@
+/*body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    background-color: #ff6600;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+nav a:hover, nav a.active {
+    background-color: #555;
+}
+.content {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+form {
+    display: grid;
+    gap: 10px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #e55b00;
+}
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.kanban-column {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+}
+.kanban-column h3 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+}
+.kanban-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: move;
+    transition: box-shadow 0.3s;
+}
+.kanban-item:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+.screen {
+    display: none;
+}
+.screen.active {
+    display: block;
+}*/
+body{
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0f0f0;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+header {
+background-color: #ff6600;
+color: white;
+text-align: center;
+padding: 1em;
+}
+nav {
+background-color: #333;
+padding: 10px;
+text-align: center;
+}
+nav a {
+color: white;
+text-decoration: none;
+padding: 10px 20px;
+margin: 0 5px;
+display: inline-block;
+transition: background-color 0.3s;
+}
+nav a:hover, nav a.active {
+background-color: #555;
+}
+.content {
+background-color: white;
+padding: 20px;
+margin-top: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+form {
+display: grid;
+gap: 10px;
+}
+input, select, textarea {
+width: 100%;
+padding: 8px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+button {
+background-color: #ff6600;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 4px;
+transition: background-color 0.3s;
+}
+button:hover {
+background-color: #e55b00;
+}
+.kanban-board {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+.kanban-column {
+flex: 1;
+margin: 0 10px;
+background-color: #f9f9f9;
+border-radius: 5px;
+padding: 10px;
+}
+.kanban-column h3 {
+text-align: center;
+color: #333;
+margin-top: 0;
+}
+.kanban-item {
+background-color: white;
+border: 1px solid #ddd;
+border-radius: 4px;
+padding: 10px;
+margin-bottom: 10px;
+cursor: move;
+transition: box-shadow 0.3s;
+}
+.kanban-item:hover {
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: left;
+}
+th {
+background-color: #f2f2f2;
+font-weight: bold;
+}
+tr:nth-child(even) {
+background-color: #f8f8f8;
+}
+.screen {
+display: none;
+}
+.screen.active {
+display: block;
+}
+#qrcode {
+text-align: center;
+margin-top: 20px;
+}
+#qrcode img {
+max-width: 250px;
+height: auto;
+}
+.profile-info {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+.stats {
+background-color: #f9f9f9;
+padding: 15px;
+border-radius: 5px;
+}
+.h2-perfil{
+    text-align: center;
+}
+
+#estiloItensPedido{
+    font-size: 15px;
+}
+#data{
+    font-size: 0.7rem;
+    text-align: end;
+    color: #615353;
+}
+#dadosPedido{
+    font-size: 0.9rem;
+    color: #000000;
+}
+#btnQRcode{
+    padding-left: 2.5%;
+    display: flex;
+    gap: 5px;
+}
+.observacaoPedido{
+    color: red;
+}
+#qrCodeImage{
+    width: 15em;
+    height: 15em;
+    pad: 10px;
+    margin: 10px;
+}

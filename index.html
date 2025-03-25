@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Pedidos e Produtos - Lanchonete ChatBot</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de Pedidos e Produtos - Lanchonete ChatBot</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showScreen('produtos')" id="nav-produtos">Produtos</a>
+        <a href="#" onclick="showScreen('pedidos')" id="nav-pedidos">Pedidos</a>
+        <a href="#" onclick="showScreen('perfil')" id="nav-perfil">Perfil</a>
+    </nav>
+    <div class="container">
+        <div id="produtos" class="screen">
+            <div class="content">
+                <h2>Cadastro de Produtos</h2>
+                <form id="produto-form">
+                    <input type="text" id="nome" placeholder="Nome do Produto" required>
+                    <input type="number" id="preco" placeholder="Preço" step="0.01" required>
+                    <select id="categoria" required>
+                        <option value="">Selecione a Categoria</option>
+                        <option value="🍔Lanches">🍔 Lanches</option>
+                        <option value="🥗Saladas">🥗 Saladas</option>
+                        <option value="🌭Hot Dogs">🌭 Hot Dogs</option>
+                        <option value="🍟Acompanhamentos">🍟 Acompanhamentos (Batata Frita, Anéis de Cebola)</option>
+                        <option value="🥧Sobremesas">🥧 Sobremesas</option>
+                        <option value="🍧Sorvetes">🍧 Sorvetes</option>
+                        <option value="🥤Refrigerantes">🥤 Refrigerantes</option>
+                        <option value="🍹Sucos Naturais">🍹 Sucos Naturais</option>
+                        <option value="🍺Bebidas Alcoólicas">🍺 Bebidas Alcoólicas</option>
+                        <option value="☕Cafés e Chás">☕ Cafés e Chás</option>
+                        <option value="🍶Água">🍶 Água</option>
+                    </select>
+                    
+                    <textarea id="descricao" placeholder="Descrição do Produto" rows="4" required></textarea>
+                    <button id="editarProduto" style="display: none;">Editar Produto</button>
+                    <button id="cadastrarProduto">Cadastrar Produto</button>
+                </form>
+            </div>
+            <div class="content">
+                <h2>Lista de Produtos</h2>
+                <table id="produtos-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Produtos serão inseridos aqui dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="pedidos" class="screen">
+            <div class="content">
+                <h2>Gerenciamento de Pedidos</h2>
+                <div class="kanban-board">
+                    <div class="kanban-column" id="pendente">
+                        <h3>Pendente</h3>
+                    </div>
+                    <div class="kanban-column" id="em-preparo">
+                        <h3>Em preparo</h3>
+                    </div>
+                    <div class="kanban-column" id="pronto">
+                        <h3>Pronto</h3>
+                    </div>
+                    <div class="kanban-column" id="entregue">
+                        <h3>Entregue</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="perfil" class="screen">
+            <div class="content">
+                <h2 class="h2-perfil">Perfil da Lanchonete</h2>
+                <div class="profile-info">
+                    
+                    <div>
+                        <h3>Conexão WhatsApp</h3>
+                    <div id="divQRcodeBTN">
+                        <img id="qrCodeImage"  class="msgConectarZap" style="display: none;" src="" alt="QR Code">
+                       <div id="btnQRcode">
+                        <button onclick="gerarQRCode()">Conectar WhatsApp</button>
+                        <button id="DesconectarWhatsapp" style="display: none;">Desconectar</button>
+                    </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="stats" style="display: none;">
+                    <h3>Estatísticas Rápidas</h3>
+                    <p>Total de Pedidos Hoje: <span id="pedidos-hoje">0</span></p>
+                    <p>Faturamento do Dia: R$ <span id="faturamento-dia">0.00</span></p>
+                    <p>Produto Mais Vendido: <span id="produto-top">-</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/produto.js"></script>
+    <script type="module" src="js/pedido.js"></script>
+    <script type="module" src="js/perfil.js"></script>
+    <script type="module" src="js/API.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+</html>
